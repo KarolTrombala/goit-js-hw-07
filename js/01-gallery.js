@@ -1,4 +1,4 @@
-import { galleryItems } from './gallery-items.js';
+import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 
 console.log(galleryItems);
@@ -6,7 +6,8 @@ console.log(galleryItems);
 const galleryEl = document.querySelector(".gallery");
 
 for (const item of galleryItems) {
-    galleryEl.insertAdjacentHTML("beforeend", 
+  galleryEl.insertAdjacentHTML(
+    "beforeend",
     `<div class="gallery__item">
     <a class="gallery__link" href="${item.original}">
     <img 
@@ -16,17 +17,19 @@ for (const item of galleryItems) {
     alt="${item.description}"
     />
     </a>
-    </div`);
+    </div`
+  );
 }
 
 galleryEl.addEventListener("click", (e) => {
-    e.preventDefault();
-    const instance = basicLightbox.create(
-        `<img src="${e.target.dataset.source}">`);
+  e.preventDefault();
+  const instance = basicLightbox.create(
+    `<img src="${e.target.dataset.source}">`
+  );
 
-instance.show();
+  instance.show();
 
-document.addEventListener("keydown", (e) => {
+  document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       instance.close();
     }
