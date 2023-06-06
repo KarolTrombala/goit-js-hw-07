@@ -16,7 +16,7 @@ for (const item of galleryItems) {
     alt="${item.description}"
     />
     </a>
-    </div`
+    </div>`
   );
 }
 
@@ -24,3 +24,6 @@ galleryEl.addEventListener("click", (e) => {
   e.preventDefault();
   });
 
+const lightbox = new SimpleLightbox('.gallery a', { 
+    
+ });
