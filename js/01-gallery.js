@@ -18,3 +18,17 @@ for (const item of galleryItems) {
     </a>
     </div`);
 }
+
+galleryEl.addEventListener("click", (e) => {
+    e.preventDefault();
+    const instance = basicLightbox.create(
+        `<img src="${e.target.dataset.source}">`);
+
+instance.show();
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      instance.close();
+    }
+  });
+});
