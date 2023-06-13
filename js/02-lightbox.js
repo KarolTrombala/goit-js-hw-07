@@ -5,21 +5,37 @@ console.log(galleryItems);
 
 const galleryEl = document.querySelector(".gallery");
 
-for (const item of galleryItems) {
-  galleryEl.insertAdjacentHTML(
-    "beforeend",
-    `<div class="gallery__item">
-    <a class="gallery__link" href="${item.original}">
-    <img 
-    class="gallery__image"
-    src="${item.preview}"
-    alt="${item.description}"
-    />
-    </a>
-    </div>`
-  );
-}
+// for (const item of galleryItems) {
+//   galleryEl.insertAdjacentHTML(
+//     "beforeend",
+//     `<div class="gallery__item">
+//     <a class="gallery__link" href="${item.original}">
+//     <img 
+//     class="gallery__image"
+//     src="${item.preview}"
+//     alt="${item.description}"
+//     />
+//     </a>
+//     </div>`
+//   );
+// }
 
+const galleryMap = galleryItems
+  .map((item) => {
+    galleryEl.insertAdjacentHTML(
+      "beforeend",
+      `<div class="gallery__item">
+      <a class="gallery__link" href="${item.original}">
+      <img 
+      class="gallery__image"
+      src="${item.preview}"
+      alt="${item.description}"
+      />
+      </a>
+      </div`
+    )
+  })
+  .join("");
 
 const lightbox = new SimpleLightbox(".gallery a", {
   captionsData: "alt",
