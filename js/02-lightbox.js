@@ -12,7 +12,7 @@ const galleryEl = document.querySelector(".gallery");
 //     "beforeend",
 //     `<div class="gallery__item">
 //     <a class="gallery__link" href="${item.original}">
-//     <img 
+//     <img
 //     class="gallery__image"
 //     src="${item.preview}"
 //     alt="${item.description}"
@@ -37,7 +37,7 @@ const galleryMap = galleryItems
       />
       </a>
       </div`
-    )
+    );
   })
   .join("");
 
