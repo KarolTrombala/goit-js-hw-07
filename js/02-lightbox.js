@@ -20,9 +20,6 @@ for (const item of galleryItems) {
   );
 }
 
-galleryEl.addEventListener("click", (e) => {
-  e.preventDefault();
-});
 
 const lightbox = new SimpleLightbox(".gallery a", {
   captionsData: "alt",
