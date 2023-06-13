@@ -5,6 +5,8 @@ console.log(galleryItems);
 
 const galleryEl = document.querySelector(".gallery");
 
+// OLD VERSION
+
 // for (const item of galleryItems) {
 //   galleryEl.insertAdjacentHTML(
 //     "beforeend",
@@ -20,6 +22,8 @@ const galleryEl = document.querySelector(".gallery");
 //     </div`
 //   );
 // }
+
+// NEW VERSION
 
 const galleryMap = galleryItems
   .map((item) => {
