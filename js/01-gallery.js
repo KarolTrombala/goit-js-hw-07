@@ -30,10 +30,11 @@ galleryEl.addEventListener("click", (e) => {
     {
       onClose: (instance) => {
         document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape")
+          if (e.key === "Escape") {
             instance.close(() =>
               document.removeEventListener("keydown", "Escape")
             );
+          }
         });
       },
     }
