@@ -25,19 +25,16 @@ const galleryMap = galleryItems
 
 galleryEl.addEventListener("click", (e) => {
   e.preventDefault();
+  const escHandler = e => {if (e.key === "Escape") instance.close()};
   const instance = basicLightbox.create(
     `<img src="${e.target.dataset.source}">`,
     {
-      onClose: (instance) => {
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape") {
-            instance.close(() =>
-              document.removeEventListener("keydown", "Escape")
-            );
-          }
-        });
-      },
-    }
-  );
+      onShow: () => {
+        document.addEventListener("keydown", escHandler);  
+        },
+      onClose: () => {
+        document.removeEventListener("keydown", escHandler);  
+        },
+      });
   instance.show();
 });
